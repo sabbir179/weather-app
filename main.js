@@ -1,8 +1,9 @@
 
-// data load from api
+// search city when click the button
 const searchBtn = document.getElementById('submit');
 searchBtn.addEventListener('click', function(){
     const searchCity = document.getElementById('input-value').value;
+    // data load from api
     let apiKey = "4679e72af906d4430f8d4698d94f5191"
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${apiKey}`)
         .then(res => res.json())
