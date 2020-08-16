@@ -14,6 +14,11 @@ searchBtn.addEventListener('click', function(){
             // 1 deg C = 273.15 ; c = k - 273
 
             const temp = document.getElementById('input-temp').innerText = Math.round(data.main.temp - 273.15);
-            const desc = document.getElementById('discreption').innerText = data.weather[0].main;
+            const desc = document.getElementById('description').innerText = data.weather[0].main;
+            
+            //change weather icon as per weather condition
+            const iconCode = data.weather[0].icon;
+            iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png"
+            document.getElementById('weather-icon').src = iconUrl;
         })
 })
